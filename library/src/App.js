@@ -47,12 +47,20 @@ class App extends Component {
           </div>
           <div className="books"> 
           <h2>Books:</h2>
-          <Books books={this.state.books}/>
+          <Books books={this.state.books} removeBook={this.removeBook} editBook={this.editBook}/>
           </div>
         </main>
       </div>
     );
   }
+
+removeBook = (book) => {
+    console.log(book);
+  }
+
+editBook = (book) => {
+  console.log(book);
+}
 }
 
 export default App;
