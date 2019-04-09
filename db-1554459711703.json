@@ -2,7 +2,9 @@
   "books": [
     {
       "id": 0,
-      "name": "Book 1"
+      "name": "Book 1",
+      "author": "Tom Moth",
+      "description": "Such a nice book"
     }
   ]
 }

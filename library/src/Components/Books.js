@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Books = props  => (
+const Books = (props)  => (
     <div className="books-list-wrapper">
     <header className="books-list-header">
         <div>Name:</div>
@@ -8,9 +8,9 @@ const Books = props  => (
         <div>Description:</div>
     </header>
     <section>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div> {(props.books == "") ? "" : props.books[0].name}</div>
+        <div> {(props.books == "") ? "" : props.books[0].author}</div>
+        <div> {(props.books == "") ? "" : props.books[0].description}</div>
     </section>
     </div>
 );
