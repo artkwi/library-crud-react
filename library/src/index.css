@@ -6,9 +6,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.books-list-header {
+  display: grid;
+  grid-template-columns: 30vw 30vw auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.books-list-header div {
+  display: inline-block;
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: 30vw 30vw auto;
+  grid-row-gap: 16px;
+  margin-bottom: 10px;
+}
+
+.books-list > div {
+  border: 1px solid #000000;
+  align-self: center;
+}
+
+.books-list::before{
+  display: block;
+  content: '';
+ width: 100%;
+ height: 1px;
+ background: black;
+}
+
+.books {
+  margin: 8px;
 }

@@ -45,7 +45,7 @@ class App extends Component {
           <div className="book-details">
           <h2>Book details</h2>
           </div>
-          <div className="books-list"> 
+          <div className="books"> 
           <h2>Books:</h2>
           <Books books={this.state.books}/>
           </div>

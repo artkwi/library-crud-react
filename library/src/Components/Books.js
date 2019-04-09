@@ -5,7 +5,7 @@ const Books = (props)  => (
     <header className="books-list-header">
         <div>Name:</div>
         <div>Author:</div>
-        <div>Description:</div>
+        <div>Actions:</div>
     </header>
     <section>
 {
@@ -18,10 +18,10 @@ const Books = (props)  => (
 const showBooks = (props) => {
     return (
         Object.keys(props.books).map( key => 
-        <div>
+        <div className="books-list"> 
         <div> {(props.books == "") ? "" : props.books[key].name}</div>
         <div> {(props.books == "") ? "" : props.books[key].author}</div>
-        <div> {(props.books == "") ? "" : props.books[key].description}</div>
+        {/*<div> {(props.books == "") ? "" : props.books[key].description}</div> */}
         </div>
         )
     )
