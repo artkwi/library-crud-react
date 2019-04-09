@@ -8,11 +8,22 @@ const Books = (props)  => (
         <div>Description:</div>
     </header>
     <section>
-        <div> {(props.books == "") ? "" : props.books[0].name}</div>
-        <div> {(props.books == "") ? "" : props.books[0].author}</div>
-        <div> {(props.books == "") ? "" : props.books[0].description}</div>
+{
+    showBooks(props)
+}
     </section>
     </div>
 );
 
+const showBooks = (props) => {
+    return (
+        Object.keys(props.books).map( key => 
+        <div>
+        <div> {(props.books == "") ? "" : props.books[key].name}</div>
+        <div> {(props.books == "") ? "" : props.books[key].author}</div>
+        <div> {(props.books == "") ? "" : props.books[key].description}</div>
+        </div>
+        )
+    )
+}
 export default Books;
