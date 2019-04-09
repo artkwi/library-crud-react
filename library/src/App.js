@@ -1,5 +1,6 @@
 import React, { Component, useState  } from 'react';
 import Books from './Components/Books';
+import Basic from './Components/AddBook';
 
 class App extends Component {
 
@@ -8,7 +9,8 @@ class App extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      books: []
+      books: [],
+      isEditable: false
     };
   }
 
@@ -44,6 +46,7 @@ class App extends Component {
         <main>
           <div className="book-details">
           <h2>Book details</h2>
+          <Basic />
           </div>
           <div className="books"> 
           <h2>Books:</h2>
