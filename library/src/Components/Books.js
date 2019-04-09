@@ -21,6 +21,7 @@ const showBooks = (props) => {
         <div className="books-list"> 
         <div> {(props.books == "") ? "" : props.books[key].name}</div>
         <div> {(props.books == "") ? "" : props.books[key].author}</div>
+        <div> {(props.books == "") ? "" : "options"}</div>
         {/*<div> {(props.books == "") ? "" : props.books[key].description}</div> */}
         </div>
         )
