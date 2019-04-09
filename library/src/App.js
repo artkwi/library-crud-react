@@ -1,5 +1,6 @@
 import React, { Component, useState  } from 'react';
 import Books from './Components/Books';
+import Basic from './Components/AddBook';
 
 class App extends Component {
 
@@ -8,7 +9,8 @@ class App extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      books: []
+      books: [],
+      isEditable: false
     };
   }
 
@@ -44,15 +46,29 @@ class App extends Component {
         <main>
           <div className="book-details">
           <h2>Book details</h2>
+          <Basic />
           </div>
-          <div className="books-list"> 
+          <div className="books"> 
           <h2>Books:</h2>
-          <Books books={this.state.books}/>
+          <Books books={this.state.books} removeBook={this.removeBook} editBook={this.editBook}/>
           </div>
         </main>
       </div>
     );
   }
+
+removeBook = (book) => {
+    console.log(book);
+    const books = [...this.state.books];
+    books.splice(book,1);
+    this.setState({books: books});
+  }
+
+editBook = (book) => {
+  console.log(book);
+}
+
+
 }
 
 export default App;
