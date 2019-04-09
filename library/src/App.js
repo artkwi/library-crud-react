@@ -56,11 +56,16 @@ class App extends Component {
 
 removeBook = (book) => {
     console.log(book);
+    const books = [...this.state.books];
+    books.splice(book,1);
+    this.setState({books: books});
   }
 
 editBook = (book) => {
   console.log(book);
 }
+
+
 }
 
 export default App;

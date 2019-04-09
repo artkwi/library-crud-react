@@ -19,10 +19,10 @@ const showBooks = (props) => {
     return (
         Object.keys(props.books).map( key => 
         <div className="books-list"> 
-        <div> {(props.books == "") ? "" : props.books[key].name}</div>
-        <div> {(props.books == "") ? "" : props.books[key].author}</div>
+        <div> {(props.books === "") ? "" : props.books[key].name}</div>
+        <div> {(props.books === "") ? "" : props.books[key].author}</div>
         <div className="books-item-options">
-        <button onClick={(e) => props.editBook(key) }>remove</button>
+        <button onClick={(e) => props.editBook(key) }>edit</button>
         <button onClick={(e) => props.removeBook(key) }>remove</button>
          </div>
         {/*<div> {(props.books == "") ? "" : props.books[key].description}</div> */}
