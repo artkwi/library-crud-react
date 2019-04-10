@@ -16,6 +16,11 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getBookList();
+  }
+
+  getBookList = () => {
+    this.setState({isEditable: false});
     fetch("http://localhost:3004/books")
       .then(res => res.json())
       .then(
@@ -32,7 +37,7 @@ class App extends Component {
           });
         }
       );
-  }
+  };
 
   render() {
     return (
@@ -43,7 +48,11 @@ class App extends Component {
         <main>
           <div className="book-details">
             <h2>Book details</h2>
-            {this.state.isEditable ? <EditBook  book={this.state.books[this.state.currentBook]}/> : <AddBook/>}
+            {this.state.isEditable ? (
+              <EditBook getBookList={this.getBookList} book={this.state.books[this.state.currentBook]} />
+            ) : (
+              <AddBook getBookList={this.getBookList}/>
+            )}
           </div>
           <div className="books">
             <h2>Books:</h2>
@@ -67,37 +76,17 @@ class App extends Component {
         "Content-Type": "application/json"
       }
     });
-    console.log(this.state.books[book]);
     const books = [...this.state.books];
     books.splice(book, 1);
     this.setState({ books: books });
   };
 
   editBook = book => {
-    console.log(book);
-    this.setState({ 
+    //console.log(book);
+    this.setState({
       isEditable: true,
       currentBook: book
-     },
-    
-    );
-  };
-
-  // need to repair
-  updateBooks = book => {
-    console.log(book);
-
-    fetch(
-      "http://localhost:3004/books/" + this.state.books[book].id,
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        }
-      },
-      { name: this.state.books[book] }
-    );
+    });
   };
 }
 
