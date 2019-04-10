@@ -1,29 +1,27 @@
-// Render Prop
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-
-
-const AddBook = props => (
+const EditBook = props => (
   <div>
-    <h3>Add an book</h3>
+    <h3>Edit book</h3>
     <Formik
-      initialValues={{ bookName: "", bookAuthor: "" }}
-      /*validate={values => {
+      initialValues={{
+        bookName: props.book.name,
+        bookAuthor: props.book.author
+      }}
+      validate={values => {
         let errors = {};
-        if (!values.bookName ) {
+        if (!values.bookName) {
           errors.bookName = "Required";
-        }
-        if (!values.bookAuthor ) {
-        errors.bookAuthor = "Required";
+          errors.bookAuthor = "Required";
         }
         return errors;
-      }}*/
+      }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
 
-        fetch("http://localhost:3004/books", {
-          method: "POST",
+        fetch("http://localhost:3004/books/" + props.book.id, {
+          method: "PATCH",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
@@ -39,8 +37,8 @@ const AddBook = props => (
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field required type="text" name="bookName" placeholder="Book name"/>
-          <Field required type="text" name="bookAuthor" placeholder="Book author" />
+          <Field required type="text" name="bookName" />
+          <Field required type="text" name="bookAuthor" />
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
@@ -50,4 +48,4 @@ const AddBook = props => (
   </div>
 );
 
-export default AddBook;
+export default EditBook;
