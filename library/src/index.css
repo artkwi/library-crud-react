@@ -52,3 +52,12 @@ code {
 .books {
   margin: 8px;
 }
+
+Form {
+  text-align: center;
+}
+
+Form input {
+  background: #e7dfff;
+
+}

@@ -37,8 +37,8 @@ const EditBook = props => (
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field type="text" name="bookName" />
-          <Field type="text" name="bookAuthor" />
+          <Field required type="text" name="bookName" />
+          <Field required type="text" name="bookAuthor" />
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>

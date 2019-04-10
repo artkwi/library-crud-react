@@ -9,14 +9,16 @@ const AddBook = props => (
     <h3>Add an book</h3>
     <Formik
       initialValues={{ bookName: "", bookAuthor: "" }}
-      validate={values => {
+      /*validate={values => {
         let errors = {};
-        if (!values) {
+        if (!values.bookName ) {
           errors.bookName = "Required";
-          errors.bookAuthor = "Required";
+        }
+        if (!values.bookAuthor ) {
+        errors.bookAuthor = "Required";
         }
         return errors;
-      }}
+      }}*/
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
 
@@ -37,10 +39,8 @@ const AddBook = props => (
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field type="text" name="bookName" placeholder="Book name"/>
-          <ErrorMessage name="bookName"/>
-          <Field type="text" name="bookAuthor" placeholder="Book author" />
-          <ErrorMessage name="bookAuthor" component="div" />
+          <Field required type="text" name="bookName" placeholder="Book name"/>
+          <Field required type="text" name="bookAuthor" placeholder="Book author" />
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
