@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import Books from "./Components/Books";
-import Basic from "./Components/AddBook";
+import AddBook from "./Components/AddBook";
+import EditBook from "./Components/EditBook";
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class App extends Component {
       error: null,
       isLoaded: false,
       books: [],
-      isEditable: false
+      isEditable: false,
+      currentBook: null
     };
   }
 
@@ -41,7 +43,7 @@ class App extends Component {
         <main>
           <div className="book-details">
             <h2>Book details</h2>
-            <Basic />
+            {this.state.isEditable ? <EditBook  book={this.state.books[this.state.currentBook]}/> : <AddBook/>}
           </div>
           <div className="books">
             <h2>Books:</h2>
@@ -73,9 +75,30 @@ class App extends Component {
 
   editBook = book => {
     console.log(book);
+    this.setState({ 
+      isEditable: true,
+      currentBook: book
+     },
+    
+    );
   };
 
-  updateBooks;
+  // need to repair
+  updateBooks = book => {
+    console.log(book);
+
+    fetch(
+      "http://localhost:3004/books/" + this.state.books[book].id,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      },
+      { name: this.state.books[book] }
+    );
+  };
 }
 
 export default App;

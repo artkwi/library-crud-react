@@ -1,12 +1,11 @@
-// Render Prop
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const AddBook = () => (
+const EditBook = props => (
   <div>
-    <h3>Add an book</h3>
+    <h3>Edit book</h3>
     <Formik
-      initialValues={{ bookName: "", bookAuthor: "" }}
+      initialValues={{ bookName: props.book.name, bookAuthor: props.book.author }}
       validate={values => {
         let errors = {};
         if (!values.bookName) {
@@ -19,8 +18,8 @@ const AddBook = () => (
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
 
-          fetch("http://localhost:3004/books", {
-            method: "POST",
+          fetch("http://localhost:3004/books/" + props.book.id, {
+            method: "PATCH",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
@@ -48,4 +47,4 @@ const AddBook = () => (
   </div>
 );
 
-export default AddBook;
+export default EditBook;
