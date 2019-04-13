@@ -39,6 +39,8 @@ class App extends Component {
       );
   };
 
+
+
   render() {
     return (
       <div className="wrapper">
@@ -46,7 +48,7 @@ class App extends Component {
           <h1 class="app-title">Library</h1>
         </header>
         <main>
-          <button className="add-book-button">New +</button>
+          <button className="add-book-button" onClick={this.newBook} >New +</button>
           <div className="book-details">
             {this.state.isEditable ? (
               <EditBook getBookList={this.getBookList} book={this.state.books[this.state.currentBook]} />
@@ -88,6 +90,12 @@ class App extends Component {
       currentBook: book
     });
   };
+
+  newBook = () => {
+    this.setState({
+      isEditable: false
+    });
+  }
 }
 
 export default App;
