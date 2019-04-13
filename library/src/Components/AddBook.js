@@ -10,6 +10,7 @@ const AddBook = props => (
       enableReinitialize
       initialValues={{ bookName: "", bookAuthor: "" }}
       onSubmit={(values, { setSubmitting }) => {
+
         setSubmitting(false);
         // add book request
         fetch("http://localhost:3004/books", {
@@ -27,6 +28,9 @@ const AddBook = props => (
           Alert.info("Book has been added!", {
             position: "top-right"
           });
+          // reset initial values
+          values.bookName = "";
+          values.bookAuthor = "";
         });
       }}
     >

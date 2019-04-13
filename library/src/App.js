@@ -47,7 +47,7 @@ class App extends Component {
           <h1 className="app-title">Library</h1>
         </header>
         <main>
-          <button className="add-book-button" onClick={this.newBook} >New +</button>
+          {(this.state.isEditable) ? <button className="add-book-button" onClick={this.newBook} >New +</button> : ""}  
           <div className="book-details">
             {this.state.isEditable ? (
               <EditBook getBookList={this.getBookList} book={this.state.books[this.state.currentBook]} />

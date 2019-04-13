@@ -7,8 +7,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  font-family: 'Dosis', sans-serif;
-  background-image: linear-gradient(to right bottom, #370505, #5f0917, #8b0d25, #ba1033, #eb1241);
+  font-family: "Dosis", sans-serif;
+  background-image: linear-gradient(
+    to right bottom,
+    #370505,
+    #5f0917,
+    #8b0d25,
+    #ba1033,
+    #eb1241
+  );
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,20 +51,16 @@ main {
   grid-template-columns: 30vw 30vw auto;
   font-size: 20px;
   font-weight: 700;
-  
 }
 
 .books-list-header::after {
   grid-column-start: 1;
   grid-column-end: 4;
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   background: #c1c1c1;
-}
-
-.books-list-header div {
 }
 
 .books-list {
@@ -66,7 +69,7 @@ main {
   grid-template-columns: 30vw 30vw auto;
   grid-row-gap: 16px;
   margin-bottom: 6px;
-    margin-top: 6px;
+  margin-top: 6px;
   background: #ffffff57;
 }
 
@@ -74,28 +77,15 @@ main {
   align-self: center;
 }
 
-
-/*
-.books-list::before{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  display: block;
-  content: '';
- width: 100%;
- height: 1px;
- background: black;
-}
-*/
-
 .books {
   margin-top: 50px;
 }
 
-Form {
+form {
   text-align: center;
 }
 
-Form input {
+form input {
   background: #f7ffe8;
   display: block;
   width: calc(200px + 10vw);
@@ -111,8 +101,8 @@ Form input {
   font-weight: 400;
   color: #ffffff;
   min-width: 90px;
-  margin: 8px;  
-  transition: .2s;
+  margin: 8px;
+  transition: 0.2s;
 }
 
 .action-button:hover {
@@ -135,7 +125,7 @@ Form input {
   border: 2px solid #5fd668;
   border-radius: 4px;
   color: #5fd668;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .add-book-button:hover {
@@ -150,9 +140,8 @@ Form input {
   color: #ffffff;
   cursor: pointer;
 }
-@media (min-width: 40em) {
-  .wrapper{
+@media (min-width: 576px) {
+  .wrapper {
     padding: 0 36px;
   }
 }
-
