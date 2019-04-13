@@ -19,3 +19,8 @@ json-server --port 3004 .\db.json
 npm start
 ```
 5. App should automatically run on `http://localhost:3000/`
+
+
+Sample screen:
+
+![alt-text](https://github.com/artkwi/library-crud-react/blob/master/sample.jpg)
