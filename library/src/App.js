@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Books from "./Components/Books";
 import AddBook from "./Components/AddBook";
 import EditBook from "./Components/EditBook";
@@ -39,15 +39,17 @@ class App extends Component {
       );
   };
 
+
+
   render() {
     return (
-      <div className="container">
+      <div className="wrapper">
         <header className="App-header">
-          <h1>Library</h1>
+          <h1 className="app-title">Library</h1>
         </header>
         <main>
+          <button className="add-book-button" onClick={this.newBook} >New +</button>
           <div className="book-details">
-            <h2>Book details</h2>
             {this.state.isEditable ? (
               <EditBook getBookList={this.getBookList} book={this.state.books[this.state.currentBook]} />
             ) : (
@@ -55,7 +57,7 @@ class App extends Component {
             )}
           </div>
           <div className="books">
-            <h2>Books:</h2>
+            <h2>Book collection:</h2>
             <Books
               books={this.state.books}
               removeBook={this.removeBook}
@@ -84,10 +86,18 @@ class App extends Component {
   editBook = book => {
     //console.log(book);
     this.setState({
-      isEditable: true,
-      currentBook: book
+      currentBook: book,
+      isEditable: true
     });
+    
+    
   };
+
+  newBook = () => {
+    this.setState({
+      isEditable: false
+    });
+  }
 }
 
 export default App;
