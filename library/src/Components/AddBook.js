@@ -41,8 +41,8 @@ const AddBook = props => (
         <Form>
           <Field required type="text" name="bookName" placeholder="Book name"/>
           <Field required type="text" name="bookAuthor" placeholder="Book author" />
-          <button type="submit" disabled={isSubmitting}>
-            Submit
+          <button className="action-button" type="submit" disabled={isSubmitting}>
+            Add
           </button>
         </Form>
       )}

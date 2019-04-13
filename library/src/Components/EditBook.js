@@ -39,8 +39,8 @@ const EditBook = props => (
         <Form>
           <Field required type="text" name="bookName" />
           <Field required type="text" name="bookAuthor" />
-          <button type="submit" disabled={isSubmitting}>
-            Submit
+          <button className="action-button" type="submit" disabled={isSubmitting}>
+            Update
           </button>
         </Form>
       )}
