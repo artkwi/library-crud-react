@@ -22,8 +22,8 @@ const showBooks = (props) => {
         <div> {(props.books === "") ? "" : props.books[key].name}</div>
         <div> {(props.books === "") ? "" : props.books[key].author}</div>
         <div className="books-item-options">
-        <button className="action-button" onClick={(e) => props.editBook(key) } >edit</button>
-        <button className="action-button" onClick={(e) => props.removeBook(key) }>remove</button>
+        <button className="action-button" onClick={(e) => props.editBook(key) } >Edit</button>
+        <button className="action-button" onClick={(e) => props.removeBook(key) }>Remove</button>
          </div>
         {/*<div> {(props.books == "") ? "" : props.books[key].description}</div> */}
         </div>

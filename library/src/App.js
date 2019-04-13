@@ -57,7 +57,7 @@ class App extends Component {
             )}
           </div>
           <div className="books">
-            <h2>Books:</h2>
+            <h2>Book collection:</h2>
             <Books
               books={this.state.books}
               removeBook={this.removeBook}
@@ -86,9 +86,11 @@ class App extends Component {
   editBook = book => {
     //console.log(book);
     this.setState({
-      isEditable: true,
-      currentBook: book
+      currentBook: book,
+      isEditable: true
     });
+    
+    
   };
 
   newBook = () => {

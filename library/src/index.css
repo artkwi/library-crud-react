@@ -65,7 +65,8 @@ main {
   grid-column-start: 2;
   grid-template-columns: 30vw 30vw auto;
   grid-row-gap: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+    margin-top: 6px;
   background: #ffffff57;
 }
 
@@ -100,7 +101,7 @@ Form input {
   min-width: 300px;
   padding: 6px;
   margin: 6px auto;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .action-button {
