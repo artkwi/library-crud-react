@@ -7,6 +7,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
@@ -14,16 +19,24 @@ code {
     monospace;
 }
 
+.wrapper {
+  padding: 0 14px;
+}
+
+.app-title {
+  margin-top: 0px;
+  padding-top: 16px;
+}
 
 .books-list-header {
   display: grid;
   grid-template-columns: 30vw 30vw auto;
   font-size: 20px;
   font-weight: 700;
+  
 }
 
 .books-list-header div {
-  display: inline-block;
 }
 
 .books-list {
@@ -50,7 +63,6 @@ code {
 }
 
 .books {
-  margin: 8px;
 }
 
 Form {
@@ -58,6 +70,28 @@ Form {
 }
 
 Form input {
-  background: #e7dfff;
+  background: #f7ffe8;
+  display: block;
+  min-width: 300px;
+  padding: 6px;
+  margin: 6px auto;
+  border-radius: 10px;
+}
 
+button {
+  padding: 8px 20px;
+  background: #5fd668;
+  border: 1px solid #3de24a;
+  font-weight: 400;
+  color: #ffffff;
+  min-width: 90px;
+}
+
+button:hover {
+  padding: 8px 20px;
+  background: #3de24a;
+  border: 1px solid #ffffff;
+  font-weight: 400;
+  color: #ffffff;
+  min-width: 90px;
 }
