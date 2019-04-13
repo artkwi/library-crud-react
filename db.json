@@ -1,8 +1,28 @@
 {
-    "books": [
-        {
-        "id": 0,
-        "name": "Book 1"
-        }
-    ]
+  "books": [
+    {
+      "id": 0,
+      "name": "Internal Communications Executive",
+      "author": "Callie Hoppe Weissnat",
+      "description": "Autem a sit dolor eum cupiditate odit et excepturi."
+    },
+    {
+      "id": 1,
+      "name": "Investor Accounts Orchestrator",
+      "author": "Harold Nader Bogisich",
+      "description": "omnis"
+    },
+    {
+      "id": 2,
+      "name": "Principal Communications Strategist",
+      "author": "Mireille Hegmann Labadie",
+      "description": "Omnis perferendis et nihil fugit vero sapiente enim ratione."
+    },
+    {
+      "id": 3,
+      "name": "Forward Assurance Manager",
+      "author": "Sydnee Feeney Trantow",
+      "description": "Voluptates delectus fugiat laboriosam sequi tempore voluptatem fuga. Ad recusandae eos voluptas et. Ut nobis earum quas sit vel. Officia qui odio incidunt possimus blanditiis. Eos aperiam vel sed fugiat autem. Adipisci sed explicabo aspernatur temporibus accusantium delectus ut voluptatem.\n \rRem sint inventore ut ea in. Expedita eos voluptas quae fuga quo unde repellat est. Recusandae qui tempora qui eos dolores. Natus enim ut similique est qui autem libero.\n \rBlanditiis sint incidunt dicta. Et est nesciunt laboriosam magni ab sed. Ut molestias ut nisi in consequatur nihil accusantium. Molestiae magni repellat eligendi. Voluptate debitis alias est tempore facere nostrum. Ratione dolore commodi quia ut et."
+    }
+  ]
 }
