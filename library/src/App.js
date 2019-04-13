@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Books from "./Components/Books";
 import AddBook from "./Components/AddBook";
 import EditBook from "./Components/EditBook";
@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <header className="App-header">
-          <h1 class="app-title">Library</h1>
+          <h1 className="app-title">Library</h1>
         </header>
         <main>
           <button className="add-book-button" onClick={this.newBook} >New +</button>

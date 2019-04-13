@@ -1,6 +1,6 @@
 // Render Prop
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 
 
 
@@ -9,16 +9,6 @@ const AddBook = props => (
     <h3>Add an book</h3>
     <Formik
       initialValues={{ bookName: "", bookAuthor: "" }}
-      /*validate={values => {
-        let errors = {};
-        if (!values.bookName ) {
-          errors.bookName = "Required";
-        }
-        if (!values.bookAuthor ) {
-        errors.bookAuthor = "Required";
-        }
-        return errors;
-      }}*/
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
 
