@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Formik, Form, Field } from "formik";
+import Alert from "react-s-alert";
 
 class EditBook extends Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class EditBook extends Component {
     return (
       <div>
         <h3>Edit book</h3>
-        <Formik enableReinitialize
+        <Formik
+          enableReinitialize
           initialValues={{
             bookName: this.state.book.name,
             bookAuthor: this.state.book.author
@@ -35,7 +37,7 @@ class EditBook extends Component {
           }}
           onSubmit={(values, { setSubmitting }) => {
             setSubmitting(false);
-
+            // update book request
             fetch("http://localhost:3004/books/" + this.state.book.id, {
               method: "PATCH",
               headers: {
@@ -48,6 +50,9 @@ class EditBook extends Component {
               })
             }).then(response => {
               this.props.getBookList();
+              Alert.success('Book has been updated!', {
+                position: 'top-right'
+              });
             });
           }}
         >
@@ -59,13 +64,13 @@ class EditBook extends Component {
                 className="action-button"
                 type="submit"
                 disabled={isSubmitting}
-                
               >
                 Update
               </button>
             </Form>
           )}
         </Formik>
+        <Alert stack={{ limit: 3 }} />
       </div>
     );
   }

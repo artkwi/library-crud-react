@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import Books from "./Components/Books";
 import AddBook from "./Components/AddBook";
 import EditBook from "./Components/EditBook";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      isLoaded: false,
       books: [],
       isEditable: false,
       currentBook: null
@@ -26,13 +27,11 @@ class App extends Component {
       .then(
         result => {
           this.setState({
-            isLoaded: true,
             books: result
           });
         },
         error => {
           this.setState({
-            isLoaded: true,
             error: error
           });
         }
@@ -48,7 +47,7 @@ class App extends Component {
           <h1 className="app-title">Library</h1>
         </header>
         <main>
-          <button className="add-book-button" onClick={this.newBook} >New +</button>
+          {(this.state.isEditable) ? <button className="add-book-button" onClick={this.newBook} >New +</button> : ""}  
           <div className="book-details">
             {this.state.isEditable ? (
               <EditBook getBookList={this.getBookList} book={this.state.books[this.state.currentBook]} />
@@ -56,6 +55,7 @@ class App extends Component {
               <AddBook getBookList={this.getBookList}/>
             )}
           </div>
+          <Alert stack={{limit: 3}} />
           <div className="books">
             <h2>Book collection:</h2>
             <Books
@@ -78,19 +78,21 @@ class App extends Component {
         "Content-Type": "application/json"
       }
     });
+    // state change
     const books = [...this.state.books];
     books.splice(book, 1);
     this.setState({ books: books });
+    // alert
+    Alert.success('Book has been removed!', {
+      position: 'top-right'
+    });
   };
 
   editBook = book => {
-    //console.log(book);
     this.setState({
       currentBook: book,
       isEditable: true
     });
-    
-    
   };
 
   newBook = () => {
