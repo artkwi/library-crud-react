@@ -1,9 +1,22 @@
 $colors: (
-  text: #ffffff
+  text: #ffffff,
+  action-button-background: #5fd668,
+  action-button-border: #3de24a,
+  action-button-background-hover: #3de24a,
+  action-button-border-hover: #ffffff,
+  table-fill: #ffffff57
 );
 
 @function color($color-name) {
   @return map-get($map: $colors, $key: $color-name);
+}
+
+$desktop: 576px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }
 
 body {
@@ -29,6 +42,12 @@ body {
   flex-direction: column;
   color: color(text);
 
+  .wrapper {
+    @include desktop {
+      padding: 0 36px;
+    }
+  }
+
   .app-title {
     margin-top: 0px;
     padding-top: 16px;
@@ -38,7 +57,7 @@ body {
     position: relative;
 
     .book-details {
-      background: #ffffff52;
+      background: color(table-fill);
       border: 2px solid #ffffff85;
       padding: 8px;
 
@@ -79,7 +98,7 @@ body {
         grid-row-gap: 16px;
         margin-bottom: 6px;
         margin-top: 6px;
-        background: #ffffff57;
+        background: color(table-fill);
       }
 
       .books-list > div {
@@ -87,13 +106,12 @@ body {
       }
     }
   }
-  
+
   .action-button {
     padding: 8px 20px;
-    background: #5fd668;
-    border: 1px solid #3de24a;
-    font-weight: 400;
-    color: #ffffff;
+    background: color(action-button-background);
+    border: 1px solid color(action-button-border);
+    color: color(text);
     min-width: 90px;
     margin: 8px;
     transition: 0.2s;
@@ -101,10 +119,8 @@ body {
 
   .action-button:hover {
     padding: 8px 20px;
-    background: #3de24a;
-    border: 1px solid #ffffff;
-    font-weight: 400;
-    color: #ffffff;
+    background: color(action-button-background-hover);
+    border: 1px solid color(action-button-border-hover);
     min-width: 90px;
     cursor: pointer;
   }
@@ -116,22 +132,22 @@ body {
     font-size: 14px;
     padding: 6px 16px;
     background: #ffffff00;
-    border: 2px solid #5fd668;
+    border: 2px solid color(action-button-background);
     border-radius: 4px;
-    color: #5fd668;
+    color: color(action-button-background);
     transition: 0.2s;
   }
-  
+
   .add-book-button:hover {
     left: 20px;
     position: absolute;
     top: 20px;
     font-size: 14px;
     padding: 6px 16px;
-    background: #5fd668;
-    border: 2px solid #5fd668;
+    background: color(action-button-background);
+    border: 2px solid color(action-button-background);
     border-radius: 4px;
-    color: #ffffff;
+    color: color(text);
     cursor: pointer;
   }
 }

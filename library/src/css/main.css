@@ -19,6 +19,12 @@ body {
   color: #ffffff;
 }
 
+@media (min-width: 576px) {
+  body .wrapper {
+    padding: 0 36px;
+  }
+}
+
 body .app-title {
   margin-top: 0px;
   padding-top: 16px;
@@ -29,7 +35,7 @@ body main {
 }
 
 body main .book-details {
-  background: #ffffff52;
+  background: #ffffff57;
   border: 2px solid #ffffff85;
   padding: 8px;
 }
@@ -90,7 +96,6 @@ body .action-button {
   padding: 8px 20px;
   background: #5fd668;
   border: 1px solid #3de24a;
-  font-weight: 400;
   color: #ffffff;
   min-width: 90px;
   margin: 8px;
@@ -102,8 +107,6 @@ body .action-button:hover {
   padding: 8px 20px;
   background: #3de24a;
   border: 1px solid #ffffff;
-  font-weight: 400;
-  color: #ffffff;
   min-width: 90px;
   cursor: pointer;
 }
