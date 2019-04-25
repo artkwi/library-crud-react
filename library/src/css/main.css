@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#370505), color-stop(#5f0917), color-stop(#8b0d25), color-stop(#ba1033), to(#eb1241));
+  background-image: linear-gradient(to right bottom, #370505, #5f0917, #8b0d25, #ba1033, #eb1241);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffff;
+}
+
+@media (min-width: 576px) {
+  body .wrapper {
+    padding: 0 36px;
+  }
+}
+
+body .app-title {
+  margin-top: 0px;
+  padding-top: 16px;
+}
+
+body main {
+  position: relative;
+}
+
+body main .book-details {
+  background: #ffffff57;
+  border: 2px solid #ffffff85;
+  padding: 8px;
+}
+
+body main .book-details form input {
+  background: #f7ffe8;
+  display: block;
+  width: calc(200px + 10vw);
+  padding: 6px;
+  margin: 6px auto;
+  border-radius: 4px;
+}
+
+body main .books {
+  margin-top: 50px;
+}
+
+body main .books .books-list-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30vw 30vw auto;
+      grid-template-columns: 30vw 30vw auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+body main .books .books-list-header::after {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #c1c1c1;
+}
+
+body main .books .books-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-columns: 30vw 30vw auto;
+      grid-template-columns: 30vw 30vw auto;
+  grid-row-gap: 16px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  background: #ffffff57;
+}
+
+body main .books .books-list > div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body .action-button {
+  padding: 8px 20px;
+  background: #5fd668;
+  border: 1px solid #3de24a;
+  color: #ffffff;
+  min-width: 90px;
+  margin: 8px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body .action-button:hover {
+  padding: 8px 20px;
+  background: #3de24a;
+  border: 1px solid #ffffff;
+  min-width: 90px;
+  cursor: pointer;
+}
+
+body .add-book-button {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  font-size: 14px;
+  padding: 6px 16px;
+  background: #ffffff00;
+  border: 2px solid #5fd668;
+  border-radius: 4px;
+  color: #5fd668;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body .add-book-button:hover {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  font-size: 14px;
+  padding: 6px 16px;
+  background: #5fd668;
+  border: 2px solid #5fd668;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */
